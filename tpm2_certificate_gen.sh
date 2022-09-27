@@ -40,6 +40,8 @@ pki --issue --cacert cacert.pem --cakey cakey.pem --type pkcs10 --in ak_ecc_req.
 #tpm2_nvdefine 0x01800003 -C o -s 1001 -a 0x2000A
 #tpm2_nvwrite  0x01800003 -C o -i ak_ecc_cert.der
 
+# Auth-handle: TPM_RH_OWNER(0x40000001)
+# Attribute: 0x2000A
 fsize=$(du -b ak_ecc_cert.der | cut -f 1)
 tpm2_nvdefine -x 0x01800003 -a 0x40000001 -t 0x2000A -s ${fsize}
 tpm2_nvwrite -x  0x01800003 -a 0x40000001 ak_ecc_cert.der
@@ -54,7 +56,8 @@ pki --issue --cacert cacert.pem --cakey cakey.pem --type pkcs10 --in ak_rsa_req.
 #tpm2_nvdefine 0x01800004 -C o -s 1001 -a 0x2000A
 #tpm2_nvwrite  0x01800004 -C o -i ak_rsa_cert.der
 
+# Auth-handle: TPM_RH_OWNER(0x40000001)
+# Attribute: 0x2000A
 fsize=$(du -b ak_rsa_cert.der | cut -f 1)
 tpm2_nvdefine -x 0x01800004 -a 0x40000001 -t 0x2000A -s ${fsize}
 tpm2_nvwrite  -x 0x01800004 -a 0x40000001 ak_rsa_cert.der
-
