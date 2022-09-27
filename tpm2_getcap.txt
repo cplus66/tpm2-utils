@@ -1,0 +1,1327 @@
++ CAP='
+    properties-fixed
+    properties-variable
+    algorithms
+    commands
+    ecc-curves
+    handles-transient
+    handles-persistent
+    handles-permanent
+    handles-pcr
+    handles-nv-index
+    handles-loaded-session
+    handles-saved-session
+'
++ for i in '$CAP'
++ tpm2_getcap -c properties-fixed
+WARN: More data to be queried: capability: 0x6, property: 0x100
+
+TPM_PT_FAMILY_INDICATOR:
+  as UINT32:                0x08322e3000
+  as string:                "2.0"
+TPM_PT_LEVEL:               0
+TPM_PT_REVISION:            1.16
+TPM_PT_DAY_OF_YEAR:         0x00000109
+TPM_PT_YEAR:                0x000007e0
+TPM_PT_MANUFACTURER:        0x49465800
+TPM_PT_VENDOR_STRING_1:
+  as UINT32:                0x534c4239
+  as string:                "SLB9"
+TPM_PT_VENDOR_STRING_2:
+  as UINT32:                0x36373000
+  as string:                "670"
+TPM_PT_VENDOR_STRING_3:
+  as UINT32:                0x00000000
+  as string:                ""
+TPM_PT_VENDOR_STRING_4:
+  as UINT32:                0x00000000
+  as string:                ""
+TPM_PT_VENDOR_TPM_TYPE:     0x00000000
+TPM_PT_FIRMWARE_VERSION_1:  0x0007003f
+TPM_PT_FIRMWARE_VERSION_2:  0x000d1900
+TPM_PT_INPUT_BUFFER:        0x00000400
+TPM_PT_TPM2_HR_TRANSIENT_MIN:    0x00000003
+TPM_PT_TPM2_HR_PERSISTENT_MIN:   0x00000007
+TPM_PT_HR_LOADED_MIN:       0x00000003
+TPM_PT_ACTIVE_SESSIONS_MAX: 0x00000040
+TPM_PT_PCR_COUNT:           0x00000018
+TPM_PT_PCR_SELECT_MIN:      0x00000003
+TPM_PT_CONTEXT_GAP_MAX:     0x0000ffff
+TPM_PT_NV_COUNTERS_MAX:     0x00000008
+TPM_PT_NV_INDEX_MAX:        0x00000680
+TPM_PT_MEMORY:              0x00000006
+TPM_PT_CLOCK_UPDATE:        0x00004000
+TPM_PT_CONTEXT_HASH:        0x0000000b
+TPM_PT_CONTEXT_SYM:         0x00000006
+TPM_PT_CONTEXT_SYM_SIZE:    0x00000080
+TPM_PT_ORDERLY_COUNT:       0x000000ff
+TPM_PT_MAX_COMMAND_SIZE:    0x00000500
+TPM_PT_MAX_RESPONSE_SIZE:   0x00000500
+TPM_PT_MAX_DIGEST:          0x00000020
+TPM_PT_MAX_OBJECT_CONTEXT:  0x000002b4
+TPM_PT_MAX_SESSION_CONTEXT: 0x0000012d
+TPM_PT_PS_FAMILY_INDICATOR: 0x00000001
+TPM_PT_PS_LEVEL:            0x00000000
+TPM_PT_PS_REVISION:         0x00000100
+TPM_PT_PS_DAY_OF_YEAR:      0x00000000
+TPM_PT_PS_YEAR:             0x00000000
+TPM_PT_SPLIT_MAX:           0x00000080
+TPM_PT_TOTAL_COMMANDS:      0x0000005a
+TPM_PT_LIBRARY_COMMANDS:    0x00000059
+TPM_PT_VENDOR_COMMANDS:     0x00000001
+TPM_PT_NV_BUFFER_MAX:       0x00000300
++ for i in '$CAP'
++ tpm2_getcap -c properties-variable
+TPM_PT_PERSISTENT:
+  ownerAuthSet:              clear
+  endorsementAuthSet:        clear
+  lockoutAuthSet:            clear
+  reserved1:                 clear
+  disableClear:              clear
+  inLockout:                 clear
+  tpmGeneratedEPS:           clear
+  reserved2:                 clear
+TPM_PT_STARTUP_CLEAR:
+  phEnable:                  set
+  shEnable:                  set
+  ehEnable:                  set
+  phEnableNV:                set
+  reserved1:                 clear
+  orderly:                   clear
+TPM_PT_TPM2_HR_NV_INDEX:          0x00000002
+TPM_PT_HR_LOADED:            0x00000000
+TPM_PT_HR_LOADED_AVAIL:      0x00000003
+TPM_PT_HR_ACTIVE:            0x00000000
+TPM_PT_HR_ACTIVE_AVAIL:      0x00000040
+TPM_PT_TPM2_HR_TRANSIENT_AVAIL:   0x00000003
+TPM_PT_TPM2_HR_PERSISTENT:        0x00000003
+TPM_PT_TPM2_HR_PERSISTENT_AVAIL:  0x0000000f
+TPM_PT_NV_COUNTERS:          0x00000000
+TPM_PT_NV_COUNTERS_AVAIL:    0x0000000d
+TPM_PT_ALGORITHM_SET:        0x00000000
+TPM_PT_LOADED_CURVES:        0x00000002
+TPM_PT_LOCKOUT_COUNTER:      0x00000000
+TPM_PT_MAX_AUTH_FAIL:        0x00000020
+TPM_PT_LOCKOUT_INTERVAL:     0x00001c20
+TPM_PT_LOCKOUT_RECOVERY:     0x00015180
+TPM_PT_AUDIT_COUNTER_0:      0x00000000
+TPM_PT_AUDIT_COUNTER_1:      0x00000000
++ for i in '$CAP'
++ tpm2_getcap -c algorithms
+TPMA_ALGORITHM for ALG_ID: 0x1 - rsa
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     set
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x4 - sha1
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x5 - hmac
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    set
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x6 - aes
+  asymmetric: clear
+  symmetric:  set
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x8 - keyedhash
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     set
+  reserved:   0x0
+  signing:    set
+  encrypting: set
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0xa - xor
+  asymmetric: clear
+  symmetric:  set
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0xb - sha256
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x14 - rsassa
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    set
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x15 - rsaes
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: set
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x16 - rsapss
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    set
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x17 - oaep
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: set
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x18 - ecdsa
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    set
+  encrypting: clear
+  method:     set
+TPMA_ALGORITHM for ALG_ID: 0x19 - ecdh
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     set
+TPMA_ALGORITHM for ALG_ID: 0x1a - ecdaa
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    set
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x20 - kdf1_sp800_56a
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     set
+TPMA_ALGORITHM for ALG_ID: 0x22 - kdf1_sp800_108
+  asymmetric: clear
+  symmetric:  clear
+  hash:       set
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     set
+TPMA_ALGORITHM for ALG_ID: 0x23 - ecc
+  asymmetric: set
+  symmetric:  clear
+  hash:       clear
+  object:     set
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x25 - symcipher
+  asymmetric: clear
+  symmetric:  clear
+  hash:       clear
+  object:     set
+  reserved:   0x0
+  signing:    clear
+  encrypting: clear
+  method:     clear
+TPMA_ALGORITHM for ALG_ID: 0x43 - cfb
+  asymmetric: clear
+  symmetric:  set
+  hash:       clear
+  object:     clear
+  reserved:   0x0
+  signing:    clear
+  encrypting: set
+  method:     clear
++ for i in '$CAP'
++ tpm2_getcap -c commands
+TPMA_CC: 0x0440011f
+  name: nv
+  commandIndex: 0x11f
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400120
+  name: evictcontrol
+  commandIndex: 0x120
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02c00121
+  name: hierarchycontrol
+  commandIndex: 0x121
+  reserved1:    0x0
+  nv:           set
+  extensive:    set
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400122
+  name: nv
+  commandIndex: 0x122
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02c00126
+  name: clear
+  commandIndex: 0x126
+  reserved1:    0x0
+  nv:           set
+  extensive:    set
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02400127
+  name: clearcontrol
+  commandIndex: 0x127
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02400128
+  name: clockset
+  commandIndex: 0x128
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02400129
+  name: hierarchychangeauth
+  commandIndex: 0x129
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240012a
+  name: nv
+  commandIndex: 0x12a
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240012b
+  name: pcr
+  commandIndex: 0x12b
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240012e
+  name: setprimarypolicy
+  commandIndex: 0x12e
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000130
+  name: clockrateadjust
+  commandIndex: 0x130
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x12000131
+  name: createprimary
+  commandIndex: 0x131
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400134
+  name: nv
+  commandIndex: 0x134
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400135
+  name: nv
+  commandIndex: 0x135
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400136
+  name: nv
+  commandIndex: 0x136
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400137
+  name: nv
+  commandIndex: 0x137
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04400138
+  name: nv
+  commandIndex: 0x138
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02400139
+  name: dictionaryattacklockreset
+  commandIndex: 0x139
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240013a
+  name: dictionaryattackparameters
+  commandIndex: 0x13a
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240013b
+  name: nv
+  commandIndex: 0x13b
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240013c
+  name: pcr
+  commandIndex: 0x13c
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0240013d
+  name: pcr
+  commandIndex: 0x13d
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0300013e
+  name: sequencecomplete
+  commandIndex: 0x13e
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      set
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00400142
+  name: Impossible
+  commandIndex: 0x142
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00400143
+  name: Impossible
+  commandIndex: 0x143
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00400144
+  name: startup
+  commandIndex: 0x144
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00400145
+  name: shutdown
+  commandIndex: 0x145
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00400146
+  name: stirrandom
+  commandIndex: 0x146
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04000147
+  name: activatecredential
+  commandIndex: 0x147
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04000148
+  name: certify
+  commandIndex: 0x148
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x06000149
+  name: policynv
+  commandIndex: 0x149
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x3
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0400014a
+  name: certifycreation
+  commandIndex: 0x14a
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0400014b
+  name: duplicate
+  commandIndex: 0x14b
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0600014d
+  name: getsessionauditdigest
+  commandIndex: 0x14d
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x3
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0400014e
+  name: nv
+  commandIndex: 0x14e
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0400014f
+  name: nv
+  commandIndex: 0x14f
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04000150
+  name: objectchangeauth
+  commandIndex: 0x150
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04000151
+  name: policysecret
+  commandIndex: 0x151
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000153
+  name: create
+  commandIndex: 0x153
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000154
+  name: ecdh
+  commandIndex: 0x154
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000155
+  name: hmac
+  commandIndex: 0x155
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000156
+  name: import
+  commandIndex: 0x156
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x12000157
+  name: load
+  commandIndex: 0x157
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000158
+  name: quote
+  commandIndex: 0x158
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000159
+  name: rsa
+  commandIndex: 0x159
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x1200015b
+  name: hmac
+  commandIndex: 0x15b
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200015c
+  name: sequenceupdate
+  commandIndex: 0x15c
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200015d
+  name: sign
+  commandIndex: 0x15d
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200015e
+  name: unseal
+  commandIndex: 0x15e
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x04000160
+  name: policysigned
+  commandIndex: 0x160
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x10000161
+  name: contextload
+  commandIndex: 0x161
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000162
+  name: contextsave
+  commandIndex: 0x162
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000163
+  name: ecdh
+  commandIndex: 0x163
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00000165
+  name: flushcontext
+  commandIndex: 0x165
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x10000167
+  name: loadexternal
+  commandIndex: 0x167
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000168
+  name: makecredential
+  commandIndex: 0x168
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000169
+  name: nv
+  commandIndex: 0x169
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016a
+  name: policyauthorize
+  commandIndex: 0x16a
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016b
+  name: policyauthvalue
+  commandIndex: 0x16b
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016c
+  name: policycommandcode
+  commandIndex: 0x16c
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016d
+  name: policycountertimer
+  commandIndex: 0x16d
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016e
+  name: policycphash
+  commandIndex: 0x16e
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200016f
+  name: policylocality
+  commandIndex: 0x16f
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000170
+  name: policynamehash
+  commandIndex: 0x170
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000171
+  name: policyor
+  commandIndex: 0x171
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000172
+  name: policyticket
+  commandIndex: 0x172
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000173
+  name: readpublic
+  commandIndex: 0x173
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000174
+  name: rsa
+  commandIndex: 0x174
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x14000176
+  name: startauthsession
+  commandIndex: 0x176
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x2
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000177
+  name: verifysignature
+  commandIndex: 0x177
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00000178
+  name: ecc
+  commandIndex: 0x178
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000017a
+  name: getcapability
+  commandIndex: 0x17a
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000017b
+  name: getrandom
+  commandIndex: 0x17b
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000017c
+  name: Impossible
+  commandIndex: 0x17c
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000017d
+  name: hash
+  commandIndex: 0x17d
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000017e
+  name: pcr
+  commandIndex: 0x17e
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200017f
+  name: policypcr
+  commandIndex: 0x17f
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000180
+  name: policyrestart
+  commandIndex: 0x180
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x00000181
+  name: readclock
+  commandIndex: 0x181
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02400182
+  name: pcr
+  commandIndex: 0x182
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x05400185
+  name: eventsequencecomplete
+  commandIndex: 0x185
+  reserved1:    0x0
+  nv:           set
+  extensive:    clear
+  flushed:      set
+  cHandles:     0x2
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x10000186
+  name: hashsequencestart
+  commandIndex: 0x186
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      set
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000188
+  name: policyduplicationselect
+  commandIndex: 0x188
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x02000189
+  name: policygetdigest
+  commandIndex: 0x189
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0000018a
+  name: Impossible
+  commandIndex: 0x18a
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x0
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200018b
+  name: commit
+  commandIndex: 0x18b
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200018c
+  name: policypassword
+  commandIndex: 0x18c
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x0200018f
+  name: policynvwritten
+  commandIndex: 0x18f
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            clear
+  Res:          0x0
+TPMA_CC: 0x2200012f
+  name: fieldupgradestart
+  commandIndex: 0x12f
+  reserved1:    0x0
+  nv:           clear
+  extensive:    clear
+  flushed:      clear
+  cHandles:     0x1
+  rHandle:      clear
+  V:            set
+  Res:          0x0
++ for i in '$CAP'
++ tpm2_getcap -c ecc-curves
+TPM2_ECC_NIST_P256 (0x0003)
+TPM2_ECC_BN_P256   (0x0010)
++ for i in '$CAP'
++ tpm2_getcap -c handles-transient
++ for i in '$CAP'
++ tpm2_getcap -c handles-persistent
+0x81010000
+0x81010001
+0x81010002
++ for i in '$CAP'
++ tpm2_getcap -c handles-permanent
+0x40000001
+0x40000007
+0x40000009
+0x4000000a
+0x4000000b
+0x4000000c
+0x4000000d
++ for i in '$CAP'
++ tpm2_getcap -c handles-pcr
+0x00000000
+0x00000001
+0x00000002
+0x00000003
+0x00000004
+0x00000005
+0x00000006
+0x00000007
+0x00000008
+0x00000009
+0x0000000a
+0x0000000b
+0x0000000c
+0x0000000d
+0x0000000e
+0x0000000f
+0x00000010
+0x00000011
+0x00000012
+0x00000013
+0x00000014
+0x00000015
+0x00000016
+0x00000017
++ for i in '$CAP'
++ tpm2_getcap -c handles-nv-index
+0x01c00002
+0x01c0000a
++ for i in '$CAP'
++ tpm2_getcap -c handles-loaded-session
++ for i in '$CAP'
++ tpm2_getcap -c handles-saved-session
