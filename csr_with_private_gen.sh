@@ -1,4 +1,5 @@
 #!/bin/bash -xe
+# openssl req -out CSR.csr -key privateKey.key -new
 
 CSR=$1
 PRIVATE_KEY=$2

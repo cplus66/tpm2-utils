@@ -1,4 +1,5 @@
 #!/bin/bash -xe
+# openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key
 
 OLD_CERTIFICATE=$1
 CSR=$2
