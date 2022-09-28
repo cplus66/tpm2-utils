@@ -1,0 +1,50 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 533757272 (0x1fd07d58)
+    Signature Algorithm: ecdsa-with-SHA384
+        Issuer: C=DE, O=Infineon Technologies AG, OU=OPTIGA(TM) Devices, CN=Infineon OPTIGA(TM) ECC Root CA
+        Validity
+            Not Before: Aug 21 12:55:37 2017 GMT
+            Not After : Aug 21 12:55:37 2037 GMT
+        Subject: C=DE, O=Infineon Technologies AG, OU=OPTIGA(TM) TPM2.0, CN=Infineon OPTIGA(TM) ECC Manufacturing CA 035
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub: 
+                    04:22:72:98:1c:bc:6f:25:ca:d8:9f:cf:0b:91:49:
+                    6c:c3:9a:b1:6f:fb:59:b7:a2:0f:a1:db:73:c3:1a:
+                    87:c6:ba:43:22:39:44:3e:aa:d4:ca:ca:b5:df:f8:
+                    10:d2:06:50:31:12:57:e9:86:a2:13:a8:e0:86:6b:
+                    cf:24:31:58:92
+                ASN1 OID: prime256v1
+        X509v3 extensions:
+            Authority Information Access: 
+                CA Issuers - URI:http://pki.infineon.com/OptigaEccRootCA/OptigaEccRootCA.crt
+
+            X509v3 Subject Key Identifier: 
+                36:59:8F:22:EC:84:C3:C4:F6:40:D2:1C:16:7D:0B:91:13:7B:90:A4
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Basic Constraints: critical
+                CA:TRUE, pathlen:0
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://pki.infineon.com/OptigaEccRootCA/OptigaEccRootCA.crl
+
+            X509v3 Certificate Policies: 
+                Policy: 1.2.276.0.68.1.20.1
+
+            X509v3 Authority Key Identifier: 
+                keyid:B4:18:85:C8:4A:4A:C5:12:7A:F2:40:39:DE:C4:F5:8B:1E:7E:4A:D1
+
+            X509v3 Extended Key Usage: 
+                2.23.133.8.1
+    Signature Algorithm: ecdsa-with-SHA384
+         30:65:02:30:02:6c:ce:d4:2f:20:8a:66:5c:16:75:7a:2b:4c:
+         2f:b5:d9:5a:8e:43:62:c3:ed:72:f7:1d:c9:de:2e:78:ee:1b:
+         c6:be:86:82:2a:6f:67:4e:47:1a:c5:c4:b5:16:24:a5:02:31:
+         00:bb:fa:7d:f9:12:4a:84:65:33:2e:6e:e7:31:77:f5:62:ab:
+         ca:90:2e:c6:d2:f8:f0:29:01:28:b6:7c:51:5a:f1:af:0f:e9:
+         b7:3d:5e:ec:26:fc:ab:60:10:d5:0d:53:0f
