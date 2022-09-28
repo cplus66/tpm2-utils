@@ -1,1 +1,4 @@
-openssl x509 -in $1 -text -noout
+#!/bin/bash -xe
+PUBLIC_KEY=$1
+
+openssl x509 -in $PUBLIC_KEY -text -noout

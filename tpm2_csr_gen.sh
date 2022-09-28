@@ -8,6 +8,6 @@ SUBJECT_ALT_NAME=$2
 SUBJECT_DIST_NAME=$3
 CSR=$4
 
-pki --req --keyid $AK_HANDLE --san ${SUBJECT_ALT_NAME}\
+pki --req --keyid $AK_HANDLE --san ${SUBJECT_ALT_NAME} \
     --dn "${SUBJECT_DIST_NAME}" \
     --outform pem > $CSR

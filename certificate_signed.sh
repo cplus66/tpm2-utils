@@ -8,6 +8,6 @@ CA_PRIVATE_KEY=$2
 CSR=$3
 CERTIFICATE=$4
 
-pki --issue --cacert $CA_CERTIFICATE --cakey $CA_PRIVATE_KEY 
-    --type pkcs10 --in $CSR --lifetime 3651
+pki --issue --cacert $CA_CERTIFICATE --cakey $CA_PRIVATE_KEY \
+    --type pkcs10 --in $CSR --lifetime 3651 \
     --outform pem > $CERTIFICATE

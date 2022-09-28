@@ -1,7 +1,6 @@
 #!/bin/bash -xe
 
 # Key Layout
-
 # Handle       Object
 # -----------------------------------------------
 # 0x81010001   ECDSA Endorsement Key
