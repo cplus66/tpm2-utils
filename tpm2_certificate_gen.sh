@@ -11,7 +11,11 @@
 # 0x01800004   RSA Attestation Key Certificate
 
 # Create CA
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout cakey.pem -out cacert.pem
+# openssl req -x509 -sha256 -nodes -days 3652 -newkey rsa:2048 -keyout cakey.pem -out cacert.pem
+# pki --gen --type ecdsa --size 256 --outform pem > cakey.pem
+# pki --self --ca --type ecdsa --in cakey.pem --dn="C=CH, O=strongSec GmbH, CN=strongSec 2016 Root CA" --lifetime 3652 --outform pem > cacert.pem
+openssl ecparam -name prime256v1 -genkey -noout -out cakey.pem
+openssl req -x509 -sha256 -new -days 3652 -key cakey.pem -out cacert.pem -addext "keyUsage = critical,digitalSignature,keyCertSign,cRLSign"
 
 # 0x81010001   ECDSA Endorsement Key
 # tpm2_createek -G ecc -c 0x81010001 -u ek_ecc.pub
@@ -40,9 +44,9 @@ pki --issue --cacert cacert.pem --cakey cakey.pem --type pkcs10 --in ak_ecc_req.
 #tpm2_nvwrite  0x01800003 -C o -i ak_ecc_cert.der
 
 # Auth-handle: TPM_RH_OWNER(0x40000001)
-# Attribute: 0x2000A
+# Attribute: ownerwrite|policywrite|ownerread(0x2000A)
 fsize=$(du -b ak_ecc_cert.der | cut -f 1)
-tpm2_nvdefine -x 0x01800003 -a 0x40000001 -t 0x2000A -s ${fsize}
+tpm2_nvdefine -x 0x01800003 -a 0x40000001 -s ${fsize} -t 0x2000A
 tpm2_nvwrite -x  0x01800003 -a 0x40000001 ak_ecc_cert.der
 
 # 0x01800004   RSA Attestation Key Certificate
@@ -56,7 +60,7 @@ pki --issue --cacert cacert.pem --cakey cakey.pem --type pkcs10 --in ak_rsa_req.
 #tpm2_nvwrite  0x01800004 -C o -i ak_rsa_cert.der
 
 # Auth-handle: TPM_RH_OWNER(0x40000001)
-# Attribute: 0x2000A
+# Attribute: ownerwrite|policywrite|ownerread(0x2000A)
 fsize=$(du -b ak_rsa_cert.der | cut -f 1)
-tpm2_nvdefine -x 0x01800004 -a 0x40000001 -t 0x2000A -s ${fsize}
+tpm2_nvdefine -x 0x01800004 -a 0x40000001 -s ${fsize} -t 0x2000A
 tpm2_nvwrite  -x 0x01800004 -a 0x40000001 ak_rsa_cert.der
