@@ -1,0 +1,37 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            28:c6:47:db:31:b8:51:c9:b4:fa:93:a7:06:d8:c1:50:c8:e1:24:a2
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C = AU, ST = Some-State, O = Internet Widgits Pty Ltd
+        Validity
+            Not Before: Sep 29 06:03:59 2022 GMT
+            Not After : Sep 28 06:03:59 2032 GMT
+        Subject: C = AU, ST = Some-State, O = Internet Widgits Pty Ltd
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:03:b2:b8:b1:25:eb:44:cd:78:6f:c9:f3:15:7b:
+                    6e:de:dd:60:78:45:4d:f3:af:97:40:84:21:d4:6d:
+                    fd:f1:ca:54:6d:0b:c0:22:71:18:e1:d1:e3:12:2f:
+                    a7:bd:c3:ba:6b:31:24:64:7f:0c:8b:52:f2:57:f7:
+                    44:6c:bd:40:6d
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                67:AE:69:53:36:CF:FF:15:B0:0B:12:D9:6D:96:9D:A2:FF:AD:6D:EC
+            X509v3 Authority Key Identifier: 
+                keyid:67:AE:69:53:36:CF:FF:15:B0:0B:12:D9:6D:96:9D:A2:FF:AD:6D:EC
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:8b:e7:2b:83:2e:b1:dd:f1:43:dd:77:78:4b:
+         42:fe:4e:d1:f6:98:0a:59:db:a0:68:41:5c:02:e2:59:da:43:
+         37:02:20:5d:de:14:55:5b:3d:47:88:69:81:9e:aa:1d:67:82:
+         e2:8e:04:83:ba:e0:a1:eb:05:b8:21:7d:51:e6:20:a2:0e

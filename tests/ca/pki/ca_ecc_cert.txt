@@ -1,0 +1,33 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1590428582596032784 (0x1612565e9243b910)
+    Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=CH, O=strongSec GmbH, CN=strongSec 2016 Root CA
+        Validity
+            Not Before: Apr 24 16:11:50 2021 GMT
+            Not After : Apr 24 16:11:50 2031 GMT
+        Subject: C=CH, O=strongSec GmbH, CN=strongSec 2016 Root CA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub: 
+                    04:39:20:4b:64:d8:69:2a:44:e7:f0:53:be:15:1b:
+                    62:7d:e0:c4:95:8b:e7:4b:9d:b1:44:18:c5:c2:41:
+                    76:38:8a:7b:43:e0:63:de:ce:2c:9d:a7:2f:60:56:
+                    76:9f:50:0b:44:e5:f9:91:48:62:cc:11:3f:5d:f7:
+                    21:e5:ac:fd:34
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Subject Key Identifier: 
+                B4:D1:08:4F:1E:3E:64:68:44:EA:E9:07:6C:E9:B5:1A:37:69:4C:68
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:d6:f9:18:c7:33:3f:17:0e:f1:b2:f8:0f:bb:
+         2f:0f:76:60:04:9e:6a:39:0e:8e:f0:2e:24:ef:53:a1:8a:62:
+         2c:02:20:50:1c:39:fc:9e:25:26:4f:e1:e0:5f:28:83:f2:3e:
+         2d:54:d8:b3:87:4b:97:39:ec:ed:ff:98:a8:92:8e:63:e7
